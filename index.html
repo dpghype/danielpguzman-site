@@ -206,7 +206,7 @@ footer a:hover{color:var(--ink)}
     </article>
     <article class="talk" id="talk-two">
       <span class="label">Talk 02 · Faith, family and business</span>
-      <h3>Light in the Dark</h3>
+      <h3>Anchored in Faith</h3>
       <p class="hook">What do you do when your life gets flipped upside down?</p>
       <ul>
         <li><b>Identity</b>Know who you are before the crisis tries to tell you. It is the one thing chaos can't take.</li>
@@ -215,7 +215,6 @@ footer a:hover{color:var(--ink)}
       </ul>
       <blockquote>"I used to pray these things would never happen. Now I'm grateful for the man I am because of them."<cite>Daniel</cite></blockquote>
       <p class="meta">For leadership teams · churches and faith-based audiences · anyone walking through crisis</p>
-      <p class="flag">Draft · working title, new title coming</p>
     </article>
   </div>
 </div></section>
@@ -294,9 +293,9 @@ footer a:hover{color:var(--ink)}
   <h2 style="margin-top:14px">Bring it to your stage.</h2>
   <p>Tell me about your event and your people. I'll come back with an abstract and availability.</p>
   <div class="mail">
-    <code id="addr">danielpguzman@mail.grokbot.com</code>
+    <code id="addr" data-email>danielpguzman@mail.grokbot.com</code>
     <button class="btn primary" id="copy" type="button">Copy email</button>
-    <a class="btn" href="mailto:danielpguzman@mail.grokbot.com?subject=Speaking%20inquiry">Open in mail</a>
+    <a class="btn" id="mailto" href="mailto:danielpguzman@mail.grokbot.com?subject=Speaking%20inquiry">Open in mail</a>
   </div>
 </div></section>
 
@@ -313,6 +312,10 @@ footer a:hover{color:var(--ink)}
 /* ===== Change the title in ONE place. It updates the hero, About and badge. =====
    Options being discussed: "Vice President of Human Performance" or "Global Head of Human Performance". */
 var TITLE = "Head of Performance";
+/* ===== Booking email: change it here (e.g. book@danielpguzman.com). ===== */
+var BOOKING_EMAIL = "danielpguzman@mail.grokbot.com";
+document.querySelectorAll('[data-email]').forEach(function(el){ el.textContent = BOOKING_EMAIL; });
+document.getElementById('mailto').href = "mailto:" + BOOKING_EMAIL + "?subject=Speaking%20inquiry";
 document.querySelectorAll('[data-title]').forEach(function(el){ el.textContent = TITLE; });
 document.getElementById('yr').textContent = new Date().getFullYear();
 document.getElementById('copy').addEventListener('click',function(){
